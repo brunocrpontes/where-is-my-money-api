@@ -52,7 +52,7 @@ exports.show = async (ctx, next) => {
   const id = ctx.params.id
 
   try {
-    ctx.body = await Category.find(id)
+    ctx.body = await Category.findOne({_id: id})
     ctx.status = 200
 
     next()

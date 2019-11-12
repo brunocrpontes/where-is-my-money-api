@@ -59,7 +59,7 @@ exports.show = async (ctx, next) => {
   const id = ctx.params.id
 
   try {
-    ctx.body = await Payment.findById(id)
+    ctx.body = await Payment.findOne({ _id: id })
       .populate('category')
       .exec()
     
