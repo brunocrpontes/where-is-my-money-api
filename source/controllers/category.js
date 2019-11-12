@@ -20,7 +20,7 @@ exports.update = async (ctx, next) => {
   const id = ctx.params.id
   const props = ctx.request.body
   try {
-    ctx.body = await Category.findByIdAndUpdate({ _id: id }, props)
+    ctx.body = await Category.findByIdAndUpdate({ _id: id }, props, {new: true})
     ctx.status = 200
 
     next()

@@ -24,7 +24,7 @@ exports.update = async (ctx, next) => {
   const props = ctx.request.body
 
   try {
-    ctx.body = await Payment.findByIdAndUpdate({ _id: id }, props)
+    ctx.body = await Payment.findByIdAndUpdate({ _id: id }, props, {new: true})
       .populate('category')
       .exec()
     
