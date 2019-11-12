@@ -23,8 +23,8 @@ router
   .put('/categories/:id', CategoryController.update)
   .delete('/categories/:id', CategoryController.delete)
 
-app.use(router.routes())
+app.use(koaBody())
+  .use(router.routes())
   .use(router.allowedMethods())
-  .use(koaBody())
 
 module.exports = app
