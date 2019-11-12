@@ -7,6 +7,9 @@
   "license": "MIT",
   "private": false,
   "repository": "git@github.com:brunocrpontes/where-is-my-money-api.git",
+  "scripts": {
+    "start": "node ."
+  },
   "dependencies": {
     "dotenv": "^8.2.0",
     "koa": "^2.11.0",
