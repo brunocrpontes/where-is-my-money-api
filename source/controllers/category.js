@@ -4,7 +4,7 @@ exports.save = async (ctx, next) => {
   const props = ctx.request.body
 
   try {
-    ctx.body = await Category(props).save()
+    ctx.body = await new Category(props).save()
     ctx.status = 200
 
     next()
