@@ -18,7 +18,9 @@ exports.save = async (ctx, next) => {
 
 exports.update = async (ctx, next) => {
   const id = ctx.params.id
-  const props = ctx.request.body
+  const { date, ...props } = ctx.request.body
+
+
   try {
     ctx.body = await Payment.findByIdAndUpdate({ _id: id }, props)
     ctx.status = 200

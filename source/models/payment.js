@@ -7,7 +7,7 @@ const paymentSchema = new Schema({
   value: { type: Number, requier: true },
   remember: { type: Boolean, requier: true },
   rememberFrequency: { type: String, requier: true },
-  date: { type: Date, required: true },
+  date: { type: String, required: true, validate: /(\d{2})\/(\d{2})\/(\d{4})\// },
   category: Category.schema
 }, {
   timestamps: true
