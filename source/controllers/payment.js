@@ -24,10 +24,12 @@ exports.update = async (ctx, next) => {
   const props = ctx.request.body
 
   try {
-    ctx.body = await Payment.findByIdAndUpdate({ _id: id }, props, {new: true})
+    ctx.body = await Payment.findByIdAndUpdate({ _id: id }, props, {
+      new: true
+    })
       .populate('category')
       .exec()
-    
+
     ctx.status = 200
 
     next()
@@ -62,7 +64,7 @@ exports.show = async (ctx, next) => {
     ctx.body = await Payment.findOne({ _id: id })
       .populate('category')
       .exec()
-    
+
     ctx.status = 200
 
     next()

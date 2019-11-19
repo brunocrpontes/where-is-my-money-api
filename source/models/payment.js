@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose')
-const Category = require('./category')
 
 const paymentSchema = new Schema({
   name: { type: String, required: true },
